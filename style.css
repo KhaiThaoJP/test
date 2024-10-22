@@ -548,7 +548,7 @@ a {
   text-decoration: none;
 }
 body{
-  background-color: #F5F5F5;
+  background-color: white;
 }
 .product-item {
   position: relative;
@@ -681,7 +681,22 @@ body{
   margin-right: 5px;
 }
 .nav a:hover{
-  color: rgb(10, 136, 185);
+  color: rgb(9, 191, 223) !important;
+  background-color: #E9EFFF !important;
+  border: 1px solid  rgb(9, 191, 223) !important;
+
+}
+.nav a{
+  background: #F3F4F6;
+  border: 1px solid rgba(196, 196, 196, 0.719);
+  border-radius: 6px;
+  padding: 0px 6px;
+  height: 35px;
+}
+.navMain{
+  background-color: #FEF2F2 !important;
+  border: 1px solid  #D70018 !important;
+  color: #D70018;
 }
 @media screen and (max-width: 991px) {
   /* offcanvas menu */
