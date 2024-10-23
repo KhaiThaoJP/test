@@ -691,7 +691,9 @@ body{
   border: 1px solid rgba(196, 196, 196, 0.719);
   border-radius: 6px;
   padding: 0px 6px;
-  height: 35px;
+  height: 30px;
+  font-size: 13px;
+  margin-bottom: 5px;
 }
 .navMain{
   background-color: #FEF2F2 !important;
@@ -750,36 +752,30 @@ body{
   }
 }
 /* CSS chung cho biểu tượng liên hệ */
-.phone-icon, .zalo-icon, .facebook-icon {
+.phone-icon, .zalo-icon, .facebook-icon, .messenger-icon {
   position: fixed;
   z-index: 1000;
   cursor: pointer;
+  width: 40px;   /* Kích thước của biểu tượng */
+  height: 40px;
 }
 
 /* Vị trí của biểu tượng điện thoại */
 .phone-icon {
   bottom: 20px;
   right: 20px;
-  width: 40px;   /* Kích thước của biểu tượng điện thoại */
-  height: 40px;
 }
 
 /* Biểu tượng Zalo không có background */
 .zalo-icon {
   bottom: 80px; /* Đặt biểu tượng Zalo phía trên biểu tượng điện thoại */
   right: 20px;
-  z-index: 1000;
-  width: 40px;   /* Kích thước của biểu tượng Zalo */
-  height: 40px;
 }
 
-/* Biểu tượng Facebook */
-.facebook-icon {
-  bottom: 140px; /* Đặt biểu tượng Facebook phía trên biểu tượng Zalo */
+/* Biểu tượng Messenger */
+.messenger-icon {
+  bottom: 140px; /* Đặt biểu tượng Messenger phía trên biểu tượng Zalo */
   right: 20px;
-  z-index: 1000;
-  width: 40px;   /* Kích thước của biểu tượng Facebook */
-  height: 40px;
 }
 
 /* Hiệu ứng cho vòng tròn bao quanh biểu tượng điện thoại */
@@ -812,8 +808,8 @@ body{
   animation: pulse 2s infinite ease-in-out; /* Thêm hiệu ứng pulse */
 }
 
-/* Hiệu ứng cho vòng tròn bao quanh biểu tượng Facebook */
-.facebook-icon::before {
+/* Hiệu ứng cho vòng tròn bao quanh biểu tượng Messenger */
+.messenger-icon::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -821,7 +817,7 @@ body{
   transform: translate(-50%, -50%) scale(0.6);
   width: 100px; /* Đường kính vòng tròn */
   height: 100px; /* Đường kính vòng tròn */
-  background-color: rgba(0, 120, 255, 0.5);  /* Màu nền vòng tròn */
+  background-color: rgba(59, 89, 152, 0.5); /* Màu nền vòng tròn */
   border-radius: 50%;
   z-index: -1;
   animation: pulse 2s infinite ease-in-out; /* Thêm hiệu ứng pulse */
@@ -830,7 +826,7 @@ body{
 /* Keyframes cho hiệu ứng vòng tròn lan tỏa */
 @keyframes pulse {
   0% {
-    transform: translate(-50%, -50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(0.55);
     opacity: 0.7;
   }
   50% {
@@ -838,40 +834,22 @@ body{
     opacity: 0.1;
   }
   100% {
-    transform: translate(-50%, -50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(0.55);
     opacity: 0.7;
   }
 }
 
 /* Hiệu ứng khi hover vào biểu tượng điện thoại */
-.phone-icon img {
-  width: 100%; /* Đặt kích thước ảnh điện thoại */
+.phone-icon img,
+.zalo-icon img,
+.messenger-icon img {
+  width: 100%; /* Đặt kích thước ảnh cho tất cả các biểu tượng */
   height: 100%;
   transition: transform 0.3s ease;
 }
 
-.phone-icon:hover img {
-  transform: scale(1.1);
-}
-
-/* Hiệu ứng khi hover vào biểu tượng Zalo */
-.zalo-icon img {
-  width: 100%;  /* Đặt kích thước ảnh Zalo */
-  height: 100%;
-  transition: transform 0.3s ease;
-}
-
-.zalo-icon:hover img {
-  transform: scale(1.1); /* Phóng to nhẹ khi hover */
-}
-
-/* Hiệu ứng khi hover vào biểu tượng Facebook */
-.facebook-icon img {
-  width: 100%;  /* Đặt kích thước ảnh Facebook */
-  height: 100%;
-  transition: transform 0.3s ease;
-}
-
-.facebook-icon:hover img {
+.phone-icon:hover img,
+.zalo-icon:hover img,
+.messenger-icon:hover img {
   transform: scale(1.1); /* Phóng to nhẹ khi hover */
 }

@@ -7,6 +7,8 @@
   <title>Snippet - BBBootstrap</title>
   <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
   <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
   <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <style>
     ::-webkit-scrollbar {
@@ -229,19 +231,21 @@
 </head>
 
 <body className='snippet-body'>
-  <header style="background-color: white;">
+  <header>
     <div class="container-fluid">
-      <div class="row py-3 border-bottom">
-        <div class="col-sm-4 col-lg-3 text-center text-sm-start">
+      <div class="row p-0 border-bottom">
+       
+        <div style="justify-content: center; text-align: center;">
           <div class="main-logo">
             <a href="index.html">
               <img src="images/logo.jpg" alt="logo" class="img-fluid" style="height: 70px;">
+              <p>
+                <strong style="justify-content: center; text-align: center; color: #000;">Hàng thật - Giá trị thật</strong>
+              </p>
             </a>
           </div>
         </div>
       </div>
-    </div>
-    <div class="container-fluid">
     </div>
   </header>
   <div class="container mt-5 mb-5">
@@ -289,8 +293,37 @@
         </div>
       </div>
     </div>
-  </div>
+     <!-- Biểu tượng điện thoại -->
+  <a href="tel:0346177905" class="phone-icon" title="Gọi ngay">
+    <img src="images/productImg/phoneIcon.png" alt="Điện thoại">
+  </a>
 
+  <!-- Biểu tượng Zalo không có nền tròn -->
+  <a href="https://zalo.me/0346177905" class="zalo-icon" title="Liên hệ Zalo">
+    <img src="images/productImg/zaloIcon.png" alt="Zalo">
+  </a>
+
+  <!-- Biểu tượng Messenger -->
+  <a href="#" id="messenger-link" class="messenger-icon" title="Liên hệ Messenger">
+    <img src="images/productImg/faceIcon.png" alt="Messenger">
+  </a>
+  </div>
+ 
+
+  <script>
+    // Kiểm tra xem là thiết bị di động hay không
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+    // Lấy liên kết đến biểu tượng Messenger
+    const messengerLink = document.getElementById('messenger-link');
+
+    // Gán liên kết phù hợp cho Messenger
+    if (isMobile) {
+      messengerLink.href = "https://m.facebook.com/messages/compose?ids=thaomin4397"; // Đường dẫn cho di động
+    } else {
+      messengerLink.href = "https://www.facebook.com/messages/e2ee/t/7212084275578075"; // Đường dẫn cho máy tính
+    }
+  </script>
   <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
   
   <script type='text/javascript'>

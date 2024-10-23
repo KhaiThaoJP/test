@@ -187,6 +187,8 @@ function searchProduct() {
       });
 
 
+
+
   }); // End of a document
 
 })(jQuery);
