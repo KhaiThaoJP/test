@@ -1,150 +1,19 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Icons</title>
-
-  <!-- Font Awesome cho biểu tượng điện thoại -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <style>
-    /* CSS chung cho biểu tượng liên hệ */
-    .phone-icon, .zalo-icon, .facebook-icon, .messenger-icon {
-      position: fixed;
-      z-index: 1000;
-      cursor: pointer;
-      width: 40px;   /* Kích thước của biểu tượng */
-      height: 40px;
-    }
-
-    /* Vị trí của biểu tượng điện thoại */
-    .phone-icon {
-      bottom: 20px;
-      right: 20px;
-    }
-
-    /* Biểu tượng Zalo không có background */
-    .zalo-icon {
-      bottom: 80px; /* Đặt biểu tượng Zalo phía trên biểu tượng điện thoại */
-      right: 20px;
-    }
-
-    /* Biểu tượng Messenger */
-    .messenger-icon {
-      bottom: 140px; /* Đặt biểu tượng Messenger phía trên biểu tượng Zalo */
-      right: 20px;
-    }
-
-    /* Hiệu ứng cho vòng tròn bao quanh biểu tượng điện thoại */
-    .phone-icon::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.6);
-      width: 100px; /* Đường kính vòng tròn */
-      height: 100px; /* Đường kính vòng tròn */
-      background-color: rgba(0, 120, 255, 0.5); /* Màu nền vòng tròn */
-      border-radius: 50%;
-      z-index: -1;
-      animation: pulse 2s infinite ease-in-out; /* Thêm hiệu ứng pulse */
-    }
-
-    /* Hiệu ứng cho vòng tròn bao quanh biểu tượng Zalo */
-    .zalo-icon::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.6);
-      width: 100px; /* Đường kính vòng tròn */
-      height: 100px; /* Đường kính vòng tròn */
-      background-color: rgba(0, 120, 255, 0.5); /* Màu nền vòng tròn */
-      border-radius: 50%;
-      z-index: -1;
-      animation: pulse 2s infinite ease-in-out; /* Thêm hiệu ứng pulse */
-    }
-
-    /* Hiệu ứng cho vòng tròn bao quanh biểu tượng Messenger */
-    .messenger-icon::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.6);
-      width: 100px; /* Đường kính vòng tròn */
-      height: 100px; /* Đường kính vòng tròn */
-      background-color: rgba(59, 89, 152, 0.5); /* Màu nền vòng tròn */
-      border-radius: 50%;
-      z-index: -1;
-      animation: pulse 2s infinite ease-in-out; /* Thêm hiệu ứng pulse */
-    }
-
-    /* Keyframes cho hiệu ứng vòng tròn lan tỏa */
-    @keyframes pulse {
-      0% {
-        transform: translate(-50%, -50%) scale(0.6);
-        opacity: 0.7;
-      }
-      50% {
-        transform: translate(-50%, -50%) scale(1.5);
-        opacity: 0.1;
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(0.6);
-        opacity: 0.7;
-      }
-    }
-
-    /* Hiệu ứng khi hover vào biểu tượng điện thoại */
-    .phone-icon img,
-    .zalo-icon img,
-    .messenger-icon img {
-      width: 100%; /* Đặt kích thước ảnh cho tất cả các biểu tượng */
-      height: 100%;
-      transition: transform 0.3s ease;
-    }
-
-    .phone-icon:hover img,
-    .zalo-icon:hover img,
-    .messenger-icon:hover img {
-      transform: scale(1.1); /* Phóng to nhẹ khi hover */
-    }
-
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <title>Document</title>
 </head>
-<body>
-
-  <!-- Biểu tượng điện thoại -->
-  <a href="tel:0346177905" class="phone-icon" title="Gọi ngay">
-    <img src="images/productImg/phoneIcon.png" alt="Điện thoại">
-  </a>
-
-  <!-- Biểu tượng Zalo không có nền tròn -->
-  <a href="https://zalo.me/0346177905" class="zalo-icon" title="Liên hệ Zalo">
-    <img src="images/productImg/zaloIcon.png" alt="Zalo">
-  </a>
-
-  <!-- Biểu tượng Messenger -->
-  <a href="#" id="messenger-link" class="messenger-icon" title="Liên hệ Messenger">
-    <img src="images/productImg/faceIcon.png" alt="Messenger">
-  </a>
-
-  <script>
-    // Kiểm tra xem là thiết bị di động hay không
-    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-
-    // Lấy liên kết đến biểu tượng Messenger
-    const messengerLink = document.getElementById('messenger-link');
-
-    // Gán liên kết phù hợp cho Messenger
-    if (isMobile) {
-      messengerLink.href = "https://m.facebook.com/messages/compose?ids=7212084275578075"; // Đường dẫn cho di động
-    } else {
-      messengerLink.href = "https://www.facebook.com/messages/e2ee/t/7212084275578075"; // Đường dẫn cho máy tính
-    }
-  </script>
-
+<body style="background-color: aquamarine;">
+  <div style="height: 200px; width: 100%; background-color: antiquewhite; position: relative;">
+      <div class="rounded-circle" style="border: 0px ;width: 150px; height: 150px; overflow: hidden; position: absolute; bottom: -50px; left: 10px;" >
+          <img src="images/logo.jpg"  class="m-0 p-0" style=" width: 150px; height: 150px; ">
+      </div>
+  </div>
+ 
 </body>
 </html>
